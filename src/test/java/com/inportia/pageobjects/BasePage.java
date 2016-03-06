@@ -12,7 +12,14 @@ public class BasePage {
 	{
 		globalBrowser = BrowserManager.getBrowser();
 	}
-	
-	
+    
+	public void finalize()
+	{
+		if(globalBrowser!=null)
+		{
+			globalBrowser.close();
+			System.exit(0);
+		}
+	}
 	
 }
