@@ -8,7 +8,7 @@ import com.inportia.pageobjects.BasePage;
 
 public class LoginPageObj extends BasePage
 {
-    LoginPageObj() {
+    public LoginPageObj() {
 		super();
 	}
 

@@ -6,7 +6,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BrowserManager {
 
 	static WebDriver browser;
+    static String autUrl = "https://www.edmodo.com";
 	
+    
 	private BrowserManager()
 	{}
 	
@@ -23,6 +25,13 @@ public class BrowserManager {
 	
 		return browser;
 	}
+	
+	public static String getAUT_URL()
+	{
+		// logic
+		return autUrl;
+	}
+	
 	
 	
 }
