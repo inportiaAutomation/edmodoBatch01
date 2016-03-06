@@ -10,7 +10,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		dryRun = false,
 		features = "features",
-		glue = "",
+		glue = "com.inportia.stepDefinitions",
 		strict = false
 		)
 public class TestRunner {
