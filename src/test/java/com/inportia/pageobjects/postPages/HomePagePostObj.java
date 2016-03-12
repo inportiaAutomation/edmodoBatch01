@@ -1,11 +1,13 @@
-package com.inportia.pageobjects.postModules;
+package com.inportia.pageobjects.postPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
 
 import com.inportia.pageobjects.BasePage;
 
+@Test
 public class HomePagePostObj extends BasePage {
 	
 	
@@ -16,32 +18,32 @@ public class HomePagePostObj extends BasePage {
 	WebElement group_name;
 	WebElement send_bt;
 	
-	HomePagePostObj(WebDriver driver)
+	public HomePagePostObj()
 	{
-		super(driver);
+		super();
 	}
 	
 	public void click_note_tab()
 	{
-		this.note_tab = globalBrowser.findElement(By.xpath(".//*[@id='postbox-note']/a"));
+		this.note_tab = browser.findElement(By.xpath(".//*[@id='postbox-note']/a"));
 		this.note_tab.click();
 	}
 	
 	public void enter_message()
 	{
 	   System.out.println("user is entering message....");
-	   this.message_tb = globalBrowser.findElement(By.xpath(".//*[@id='postbox-note-content']/div[3]/textarea"));
+	   this.message_tb = browser.findElement(By.xpath(".//*[@id='postbox-note-content']/div[3]/textarea"));
 	   this.message_tb.sendKeys("Sample message - inportia");
 	}
 	
 	public void select_reciepients()
 	{
 		System.out.println("user is selecting recipients....");
-		this.recipients_tb = globalBrowser.findElement(By.xpath(".//*[@id='postbox-note-input']"));
+		this.recipients_tb = browser.findElement(By.xpath(".//*[@id='postbox-note-input']"));
 		this.recipients_tb.sendKeys("TestGroup-01");
 		
 		// select the populated group
-		this.group_name = globalBrowser.findElement(By.linkText("TestGroup-01"));
+		this.group_name = browser.findElements(By.linkText("TestGroup-01")).get(1);
 		this.group_name.click();
 	}
 	
@@ -49,7 +51,7 @@ public class HomePagePostObj extends BasePage {
 	public void send_note()
 	{
 		 System.out.println("Clicking the send button...");
-		 this.send_bt = globalBrowser.findElement(By.xpath(".//*[@id='postbox-note-content']/form/div[1]/a[2]"));
+		 this.send_bt = browser.findElement(By.xpath(".//*[@id='postbox-note-content']/form/div[1]/a[2]"));
 		 this.send_bt.click();
 	} 
 	

@@ -1,28 +1,22 @@
 package com.inportia.pageobjects;
 
 
+
 import org.openqa.selenium.WebDriver;
 
-import com.inportia.utils.BrowserManager;
+import com.inportia.stepDefinitions.Hooks;
 
 
-public class BasePage {
+public abstract class BasePage {
 
-	public WebDriver globalBrowser;
-   
-
-	protected BasePage(WebDriver driver)
-	{
-		System.out.println("Base page initialized....");
-		globalBrowser = BrowserManager.getBrowser();
-	
-	}
-	
-	public WebDriver getBrowser()
-	{
-		return globalBrowser;
-	}
+	public WebDriver browser;
     
 	
+
+	protected BasePage()
+	{
+		System.out.println("Base page initialized....");
+		this.browser = Hooks.driver;
+	}
 	
 }

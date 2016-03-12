@@ -40,6 +40,7 @@ public class BrowserManager {
 
 	public static void closeBrowser()
 	{
+		System.out.println("Browser is closing....");
 		BrowserManager.browser.quit();;
 	}
 	

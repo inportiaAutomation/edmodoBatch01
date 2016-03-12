@@ -1,16 +1,22 @@
 package com.inportia.stepDefinitions.loginModule;
 
+import org.testng.annotations.Test;
+
 import com.inportia.pageobjects.loginPages.LoginPageObj;
+
 
 import cucumber.api.java.en.Given;
 
+@Test
 public class LoginSteps {
 
 	LoginPageObj login_page = new LoginPageObj();
+	String AUT_URL = "https://www.edmodo.com";
+	
 	
 	@Given("^User is on login page$")
 	public void User_is_on_login_page() throws Throwable {
-	  
+	   login_page.goToUrl(AUT_URL);
 	}
 
 	@Given("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
