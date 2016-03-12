@@ -14,16 +14,12 @@ public class LoginPageObj extends BasePage
 	WebElement password_textBox;
 	WebElement login_submit;
 	
+	
+	
     public LoginPageObj() {
 		super();
 		System.out.println(globalBrowser.getCurrentUrl());
-		
-		
-
-		
-		
-	    
-	}
+}
 
 
 	

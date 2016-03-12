@@ -17,6 +17,7 @@ public class LoginSteps {
 	public void User_enters_and(String arg1, String arg2) throws Throwable {
 		login_page.click_login_link();
 		login_page.enclassNameter_userName_password(arg1, arg2);
+		Thread.sleep(2000);
 		login_page.click_login_submit_button();
 	}
 

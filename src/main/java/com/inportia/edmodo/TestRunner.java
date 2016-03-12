@@ -14,6 +14,8 @@ import cucumber.api.junit.Cucumber;
 		dryRun = false,
 		features = "features",
 		glue = "com.inportia.stepDefinitions",
+		tags = {"@wip"},
+	    format = { "pretty", "html:target/cucumber", "json:target_json/cucumber.json"}, 
 		strict = false
 		)
 public class TestRunner {
