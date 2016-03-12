@@ -1,6 +1,7 @@
 package com.inportia.pageobjects.postModules;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.inportia.pageobjects.BasePage;
@@ -14,6 +15,11 @@ public class HomePagePostObj extends BasePage {
 	WebElement recipients_tb;
 	WebElement group_name;
 	WebElement send_bt;
+	
+	HomePagePostObj(WebDriver driver)
+	{
+		super(driver);
+	}
 	
 	public void click_note_tab()
 	{

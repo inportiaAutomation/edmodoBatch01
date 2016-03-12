@@ -1,10 +1,9 @@
 package com.inportia.utils;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 
 public class BrowserManager {
 
@@ -20,7 +19,7 @@ public class BrowserManager {
 	 * Return the instance of the browser
 	 * */
 	
-	@Before
+
 	public static WebDriver getBrowser()
 	{
 		if( BrowserManager.browser==null)
@@ -38,10 +37,10 @@ public class BrowserManager {
 	}
 	
 	
-	@After
+
 	public static void closeBrowser()
 	{
-		BrowserManager.browser.close();
+		BrowserManager.browser.quit();;
 	}
 	
 	
