@@ -3,6 +3,9 @@ package com.inportia.utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
+
 public class BrowserManager {
 
 	static WebDriver browser;
@@ -16,14 +19,16 @@ public class BrowserManager {
 	/*
 	 * Return the instance of the browser
 	 * */
+	
+	@Before
 	public static WebDriver getBrowser()
 	{
-		if(browser==null)
+		if( BrowserManager.browser==null)
 		{
-			browser = new FirefoxDriver();
+			BrowserManager.browser = new FirefoxDriver();
 		}
 	
-		return browser;
+		return BrowserManager.browser;
 	}
 	
 	public static String getAUT_URL()
@@ -32,6 +37,12 @@ public class BrowserManager {
 		return autUrl;
 	}
 	
+	
+	@After
+	public static void closeBrowser()
+	{
+		BrowserManager.browser.close();
+	}
 	
 	
 }
